@@ -1,9 +1,15 @@
+// Load the dotenv package
 require('dotenv').config();
 
+// Access environment variables
 const config = {
-  appName: process.env.APP_NAME || 'DefaultApp',
-  port: process.env.PORT || 3000,
-  environment: process.env.NODE_ENV || 'development',
+  apiKey: process.env.API_KEY,
+  serverSecret: process.env.SERVER_SECRET,
+  isKalvian: process.env.IS_KALVIAN === 'true',
 };
 
+// Export the config object
 module.exports = config;
+
+// Log the variables (Optional for testing)
+console.log(config);
